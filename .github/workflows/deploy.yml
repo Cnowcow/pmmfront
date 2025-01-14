@@ -38,7 +38,7 @@ jobs:
       # Docker 이미지를 DockerHub에 푸시
       - name: Push Docker image to DockerHub
         run: |
-          docker tag pmmbacktest ${{ secrets.DOCKER_USERNAME }}/pmmfronttest:latest
+          docker tag pmmfronttest ${{ secrets.DOCKER_USERNAME }}/pmmfronttest:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/pmmfronttest:latest
 
       # SSH 연결 테스트
