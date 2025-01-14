@@ -38,7 +38,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "proxy": "http://:8080"
+    "proxy": "https://hhjnn92.synology.me:8089"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
