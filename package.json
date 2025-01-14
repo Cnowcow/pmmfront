@@ -25,7 +25,11 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": "warn",  // 'no-unused-vars' 경고를 오류로 처리하지 않도록 설정
+      "react-hooks/exhaustive-deps": "warn"  // 'react-hooks/exhaustive-deps' 경고를 오류로 처리하지 않도록 설정
+    }
   },
   "browserslist": {
     "production": [
@@ -37,9 +41,9 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "proxy": "https://hhjnn92.synology.me:3011"
+    ]
   },
+  "proxy": "https://hhjnn92.synology.me:3011",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
