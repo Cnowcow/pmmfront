@@ -20,7 +20,6 @@ jobs:
           echo "REACT_APP_NAVER_MAP_CLIENT_ID=${{ secrets.REACT_APP_NAVER_MAP_CLIENT_ID }}" > .env
           echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> .env
           echo "REACT_APP_KAKAO_MAP_KEY=${{ secrets.REACT_APP_KAKAO_MAP_KEY }}" >> .env
-          echo "PORT=8090" >> .env
 
       # DockerHub 로그인
       - name: Log in to DockerHub
