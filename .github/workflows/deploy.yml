@@ -28,7 +28,7 @@ jobs:
           echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> .env
 
       - name: install npm dependencies
-        run: npm install
+        run: npm install && npm install @rollup/plugin-terser@latest --save-dev && npm install @jridgewell/sourcemap-codec --save && npm install --save rimraf@latest && npm uninstall w3c-hr-time
 
       - name: react build
         run: npm run build
