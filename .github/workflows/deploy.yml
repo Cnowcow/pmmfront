@@ -14,14 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build Docker image with env variables
+      # React .env 파일 생성 (GitHub Secrets에서 가져오기)
+      - name: Create .env from GitHub Secrets
         run: |
-          docker build --no-cache \
-            --build-arg REACT_APP_NAVER_MAP_CLIENT_ID=${{ secrets.REACT_APP_NAVER_MAP_CLIENT_ID }} \
-            --build-arg REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }} \
-            --build-arg REACT_APP_KAKAO_MAP_KEY=${{ secrets.REACT_APP_KAKAO_MAP_KEY }} \
-            -t pmmfronttest .
-
+          echo "REACT_APP_NAVER_MAP_CLIENT_ID=${{ secrets.REACT_APP_NAVER_MAP_CLIENT_ID }}" > .env
+          echo "REACT_APP_KAKAO_MAP_KEY=${{ secrets.REACT_APP_KAKAO_MAP_KEY }}" >> .env
+          echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> .env
 
       # DockerHub 로그인
       - name: Log in to DockerHub
