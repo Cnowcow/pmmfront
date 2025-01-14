@@ -14,12 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Node.js 설정
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'  # Node.js 20 버전 설정
-
       # React .env 파일 생성 (GitHub Secrets에서 가져오기)
       - name: Create .env from GitHub Secrets
         run: |
@@ -27,19 +21,17 @@ jobs:
           echo "REACT_APP_KAKAO_MAP_KEY=${{ secrets.REACT_APP_KAKAO_MAP_KEY }}" >> .env
           echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> .env
 
-      - name: install npm dependencies
-        run: |
-          npm install
-          npm install @rollup/plugin-terser@latest --save-dev
-          npm install @jridgewell/sourcemap-codec --save
-          npm install rimraf@latest --save
-          npm uninstall w3c-hr-time
-          npm update
-          npm cache clean --force
-          npm install caniuse-lite@latest --save
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
 
-      - name: react build
-        run: npm run build
+      - name: Install dependencies
+        run: yarn install
+
+      # React 애플리케이션 빌드
+      - name: Build React application
+        run: yarn build
 
       # DockerHub 로그인
       - name: Log in to DockerHub
