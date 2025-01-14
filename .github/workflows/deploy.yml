@@ -22,6 +22,8 @@ jobs:
           echo "CI=false" >> .env
           echo "HOST=0.0.0.0" >> .env
 
+      - run: cat .env
+
       # DockerHub 로그인
       - name: Log in to DockerHub
         uses: docker/login-action@v2
