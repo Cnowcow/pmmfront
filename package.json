@@ -27,8 +27,8 @@
       "react-app/jest"
     ],
     "rules": {
-      "no-unused-vars": "warn",  // 'no-unused-vars' 경고를 오류로 처리하지 않도록 설정
-      "react-hooks/exhaustive-deps": "warn"  // 'react-hooks/exhaustive-deps' 경고를 오류로 처리하지 않도록 설정
+      "no-unused-vars": "warn",
+      "react-hooks/exhaustive-deps": "warn"
     }
   },
   "browserslist": {
