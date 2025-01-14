@@ -6,7 +6,6 @@ const HomePage = () => {
 
   return (
       <div className={"home-container"}>
-
           <Link to={"/choice"} className={"recommendation-link"}>
               음식 추천
           </Link>
@@ -16,7 +15,6 @@ const HomePage = () => {
           <Link to={"/ranking"} className={"recommendation-link"}>
               순위
           </Link>
-          <h2>API URL: {process.env.REACT_APP_API_URL}</h2>
       </div>
   );
 };
