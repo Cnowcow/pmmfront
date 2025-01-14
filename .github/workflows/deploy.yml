@@ -14,25 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # React .env 파일 생성 (GitHub Secrets에서 가져오기)
       - name: Create .env from GitHub Secrets
         run: |
           echo "REACT_APP_NAVER_MAP_CLIENT_ID=${{ secrets.REACT_APP_NAVER_MAP_CLIENT_ID }}" > .env
           echo "REACT_APP_KAKAO_MAP_KEY=${{ secrets.REACT_APP_KAKAO_MAP_KEY }}" >> .env
           echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> .env
           echo "CI=false" >> .env
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20.x'
-
-      - name: Install dependencies
-        run: yarn install
-
-      # React 애플리케이션 빌드
-      - name: Build React application
-        run: yarn build
 
       # DockerHub 로그인
       - name: Log in to DockerHub
