@@ -5,17 +5,19 @@ import "./HomePage.css"
 const HomePage = () => {
 
   return (
-    <div className={"home-container"}>
-      <Link to={"/choice"} className={"recommendation-link"}>
-        음식 추천
-      </Link>
-      <Link to={"/parent"} className={"recommendation-link"}>
-        음식 추천2
-      </Link>
-      <Link to={"/ranking"} className={"recommendation-link"}>
-        순위
-      </Link>
-    </div>
+      <div className={"home-container"}>
+
+          <Link to={"/choice"} className={"recommendation-link"}>
+              음식 추천
+          </Link>
+          <Link to={"/parent"} className={"recommendation-link"}>
+              음식 추천2
+          </Link>
+          <Link to={"/ranking"} className={"recommendation-link"}>
+              순위
+          </Link>
+          <h2>API URL: {process.env.REACT_APP_API_URL}</h2>
+      </div>
   );
 };
 
