@@ -17,7 +17,7 @@ jobs:
       # React .env 파일 생성 (GitHub Secrets에서 가져오기)
       - name: Create .env from GitHub Secrets
         run: |
-          echo "${{ secrets.ENV }}" > /.env
+          echo "${{ secrets.ENV }}" > .env
 
       # DockerHub 로그인
       - name: Log in to DockerHub
